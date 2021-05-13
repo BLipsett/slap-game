@@ -13,13 +13,15 @@ function slap() {
 function punch() {
   health -= 5;
   hitCount++;
-  drawCharacter();
+  drawPunch();
+  setTimeout(drawCharacter, 300);
 }
 
 function kick() {
   health -= 10;
   hitCount++;
-  drawCharacter();
+  drawKick();
+  setTimeout(drawCharacter, 300);
 }
 
 function feedThulu() {
@@ -33,10 +35,14 @@ function drawHits() {
   hitElem.innerText = hitCount;
 }
 
-function newArena() {
+function oceanArena() {
   let arenaElem = document.getElementById("arena");
+  arenaElem.classList.remove("space");
+  arenaElem.classList.add("ocean");
+}
 
-  arenaElem.classList.toggle("newbg");
+function spaceArena() {
+  document.getElementById("arena").classList.add("space");
 }
 
 function drawHealth() {
@@ -101,7 +107,37 @@ function drawSlap() {
     
       
       <img
-        src="https://josannecassar.com/wp-content/uploads/2016/08/slap.jpg"
+        src="assets/slap-thulu.png"
+        alt=""
+      />
+    `;
+  charaterElem.innerHTML = template;
+}
+
+function drawPunch() {
+  template = "";
+  let charaterElem = document.getElementById("thulu-image");
+
+  template += `
+    
+      
+      <img
+        src="assets/punch-thulu.png"
+        alt=""
+      />
+    `;
+  charaterElem.innerHTML = template;
+}
+
+function drawKick() {
+  template = "";
+  let charaterElem = document.getElementById("thulu-image");
+
+  template += `
+    
+      
+      <img
+        src="assets/kick-thulu.png"
         alt=""
       />
     `;
