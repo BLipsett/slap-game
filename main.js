@@ -42,7 +42,16 @@ function oceanArena() {
 }
 
 function spaceArena() {
+  document.getElementById("arena").classList.remove("ocean");
+
   document.getElementById("arena").classList.add("space");
+}
+
+function mountainArena() {
+  let newArenaElem = document.getElementById("arena");
+  newArenaElem.classList.remove("space");
+  newArenaElem.classList.remove("ocean");
+  newArenaElem.classList.add("mountain");
 }
 
 function drawHealth() {
