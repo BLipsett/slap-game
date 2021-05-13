@@ -33,6 +33,12 @@ function drawHits() {
   hitElem.innerText = hitCount;
 }
 
+function newArena() {
+  let arenaElem = document.getElementById("arena");
+
+  arenaElem.classList.toggle("newbg");
+}
+
 function drawHealth() {
   let healthElem = document.getElementById("health-bar");
   let healthDisplayElem = document.getElementById("health-display");
@@ -51,7 +57,7 @@ function drawCharacter() {
     template = "";
     template += `
  <img
-              src="https://image.shutterstock.com/image-vector/cthulhu-monstrous-isolated-on-white-600w-596315369.jpg"
+              src="assets/no-bg-health-75-thulu (1).png"
               alt=""
             />
  `;
